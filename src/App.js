@@ -1,14 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import AdminDetails from './Components/Admin/AdminDetails';
+import { EmployeDetails } from './Components/EmployeData/EmployeDetails';
+
+import Login from './Components/Login';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline text-red-400">
-        Hellow world
-      </h1>
-      <h2>Hiii this is Ramya</h2>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+         <Route path="/admin" element={<AdminDetails />} />
+         <Route path='/employe' element={<EmployeDetails />} />
+      </Routes>
+    </Router>
   );
 }
 
